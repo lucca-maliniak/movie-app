@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    width: 98vw;
+    grid-template-rows: 20vh 1fr;
+    justify-content: center;
+    align-items: center;
+    background: rgb(42, 42, 42);
+}
+
+.header-box {
+    align-self: flex-start;
+    height: 90%;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title-area {
+    font-size: 2em;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.search-area {
+    display: flex;
+    width: 15%;
+}
+
+.search-text, .search-button{
+    font-weight: 300;
+    padding: 10px;
+    font-size: 0.9em;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.search-text {
+    background: white;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-button {
+    border-radius: 0 8px 8px 0;
+    background: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.title-movie {
+    font-weight: 600;
+}
+
+.release-date {
+    color: #12efec;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(4, 30vh);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+} 
+
+.column {
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.card-content {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding: 100px 10px 5px;
+    background-image: linear-gradient(180deg, rgba(51, 55, 69, 0), rgba(16, 21, 40, 0.95));
+    transition: all 0.5s ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cover-button {
+    outline: none;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 6px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.title-movie, .info {
+    color: white;
+}
+
+.card:hover .cover-button {
+    background: #0091ea;
+    border-color: #0091ea;
+}
+
+.card:hover .info {
+    max-height: 200px;
+    opacity: 1;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.info {
+    max-height: 0;
+    opacity: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 1919px) {
+    .main-content {
+        .left-content, .right-content {
+            font-size: 0.8em;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .main-content {
+        grid-template-columns: repeat(3, 30vh);
+    }
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: repeat(2, 30vh);
+    }
+
+    .header-box{
+        flex-direction: column;
+    }
+
+    .search-area {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        grid-template-columns: repeat(1, 30vh);
+    }
+
+}
